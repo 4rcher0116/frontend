@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+
 function UploadFile() {
   const [file, setFile] = useState(null);
   const [userId, setUserId] = useState('');
@@ -9,7 +10,7 @@ function UploadFile() {
     const formData = new FormData();
     formData.append('file', file);
 
-    axios.post(`http://172.20.10.5:3000/upload/${userId}`, formData)
+    axios.post(`https://192.168.1.113:3000/upload/${userId}`, formData)
       .then(response => {
         console.log('File uploaded successfully');
         // Add logic for success, e.g., show a success message

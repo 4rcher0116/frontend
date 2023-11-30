@@ -1,3 +1,7 @@
+// Disables SSL certificate validation (for local development only)
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+
+
 import React from 'react';
 import UploadFile from './components/AddFile';
 import ListFiles from './components/ListFiles';
