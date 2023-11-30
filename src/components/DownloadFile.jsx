@@ -5,9 +5,14 @@ import axios from 'axios';
 const FileDownload = ({ userId }) => {
   const [files, setFiles] = useState([]);
   const [selectedFile, setSelectedFile] = useState('');
+    const apiKey = '$2b$10$rCsDXl9WU0uHkF6x61AN.u0w9DDG4BSVN3MX1Dy4NN/qrFI7GABgO';
 
   useEffect(() => {
-    axios.get(`https://192.168.1.113:3000/userfiles/${userId}`)
+    axios.get(`https://192.168.1.113:3000/userfiles/${userId}`, {
+        headers: {
+            'api-key' : apiKey,
+        }
+    })
       .then(response => {
         setFiles(response.data);
       })
